@@ -1,0 +1,13 @@
+{
+  "name": "vitest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "vitest": "^0.28.1"
+  }
+}

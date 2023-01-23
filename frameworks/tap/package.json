@@ -1,0 +1,14 @@
+{
+  "name": "tap",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test-node-runner": "node --experimental-specifier-resolution=node --loader='ts-node/esm' --test Car.test.ts",
+    "test": "tap --node-arg=--experimental-specifier-resolution=node --node-arg=--loader='ts-node/esm' --no-coverage Car.test.ts"
+  },
+  "dependencies": {
+    "tap": "^16.3.4"
+  }
+}
