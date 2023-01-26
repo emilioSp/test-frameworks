@@ -18,6 +18,6 @@ const drivers: Driver[] = [{
 },
 ];
 export const getAllDrivers = async () => {
-  await setTimeout(100);
+  await setTimeout(10); // Simulate a delay
   return drivers;
 };

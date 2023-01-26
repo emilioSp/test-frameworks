@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as Car from '../../src/models/Car.js';
-import { assignDriver } from '../../src/behaviour/assignDriver.js';
+import { assignDriver } from '../../src/behaviours/assignDriver.js';
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -13,10 +13,10 @@ jest.mock(('../../src/connectors/driversConnector'), () => ({
   }],
 }));
 
-describe('Assign driver behaviour', () => {
+describe('Assign driver behaviours', () => {
   it('should assign a Ferrari to Schumacher', async () => {
     const mockedCars: Car[] = [{
-      id: 1,
+      id: 9999,
       name: 'Ferrari 296 GTB',
     },
     {
@@ -33,7 +33,9 @@ describe('Assign driver behaviour', () => {
     });
 
     const assignedDriver = await assignDriver('Schumacher');
+    expect(assignedDriver.carId).toStrictEqual(9999);
     expect(assignedDriver.carName).toStrictEqual('Ferrari 296 GTB');
+    expect(assignedDriver.driverId).toStrictEqual(50);
     expect(assignedDriver.driverName).toStrictEqual('Schumacher');
   });
 
