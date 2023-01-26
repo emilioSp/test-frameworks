@@ -1,3 +1,5 @@
+import { setTimeout } from 'timers/promises';
+
 type Car = {
   id: number,
   name: string
@@ -16,8 +18,17 @@ const cars: Car[] = [{
   name: 'Lamborghini Huracan STO',
 }];
 
-export const get = (id: number): Car | undefined => cars.find((c) => c.id === id);
+export const get = async (id: number): Promise<Car | undefined> => {
+  await setTimeout(100);
+  return cars.find((c) => c.id === id);
+};
 
-export const list = (limit = 0): Car[] => cars.slice(0, limit);
+export const list = async (limit = 0): Promise<Car[]> => {
+  await setTimeout(100);
+  return cars.slice(0, limit);
+};
 
-export const find = (name: string): Car | undefined => cars.find((c) => c.name.startsWith(name));
+export const find = async (name: string): Promise<Car | undefined> => {
+  await setTimeout(100);
+  return cars.find((c) => c.name.startsWith(name));
+};

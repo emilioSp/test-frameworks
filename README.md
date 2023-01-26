@@ -7,10 +7,10 @@ Node.js test frameworks comparison.
 - Tap & node test runner aka "the underdogs"
 - Vitest aka "the challenger"
 
-## Rules:
+## Rules
 - TypeScript is mandatory
 - ESM is mandatory in order to test future-proof capabilities
 
-## TODO:
-- [ ] Add async tests
+## TODO
+- [x] Add async tests
 - [ ] Explore mocking
