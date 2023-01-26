@@ -6,6 +6,9 @@
   "scripts": {
     "test": "jest"
   },
+  "peerDependencies": {
+    "axios": "^1.2.5"
+  },
   "dependencies": {
     "@types/jest": "^29.2.6",
     "jest": "^29.3.1",

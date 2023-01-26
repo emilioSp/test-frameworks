@@ -7,6 +7,9 @@
   "scripts": {
     "test": "vitest run"
   },
+  "peerDependencies": {
+    "axios": "^1.2.5"
+  },
   "dependencies": {
     "vitest": "^0.28.1"
   }
