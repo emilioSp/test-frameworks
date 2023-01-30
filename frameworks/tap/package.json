@@ -5,13 +5,12 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "tap --node-arg=--loader='ts-node/esm' --no-coverage assignDriver.test.ts"
+    "test": "node --experimental-specifier-resolution=node --loader='ts-node/esm' --loader='esmock' --test assignDriver.test.ts"
   },
   "peerDependencies": {
     "axios": "^1.2.5"
   },
   "dependencies": {
-    "@types/tap": "^15.0.7",
-    "tap": "^16.3.4"
+    "esmock": "^2.1.0"
   }
 }

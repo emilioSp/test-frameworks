@@ -23,7 +23,7 @@ Node.js test frameworks comparison.
 
 ## Notes
 It seems that tap doesn't work properly with TypeScript, and it requires [esmock](https://www.npmjs.com/package/esmock) to achieve mocking capabilities.
-https://github.com/microsoft/TypeScript/issues/29127#issuecomment-449566775
+https://github.com/tapjs/node-tap/issues/807#issuecomment-1215999251
 
 Error is
 ```shell
