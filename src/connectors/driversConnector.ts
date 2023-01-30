@@ -1,7 +1,8 @@
 // Let's say these data are in a DB
 import { setTimeout } from 'node:timers/promises';
+import { DriverType } from '../models/Driver.js';
 
-const drivers: Driver[] = [{
+const drivers: DriverType[] = [{
   id: 1,
   name: 'Schumacher',
   contract: 'Ferrari',

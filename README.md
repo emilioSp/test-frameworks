@@ -4,7 +4,7 @@ Node.js test frameworks comparison.
 
 ## Fighters
 - Jest aka "the champion"
-- Tap & node test runner aka "the underdogs"
+- Tap aka "the underdogs"
 - Vitest aka "the challenger"
 
 ## Rules
@@ -20,3 +20,12 @@ Node.js test frameworks comparison.
 - [ ] Explore mocking
 - [ ] Memory consumption test
 - [ ] Performance test
+
+## Notes
+It seems that tap doesn't work properly with TypeScript, and it requires [esmock](https://www.npmjs.com/package/esmock) to achieve mocking capabilities.
+https://github.com/microsoft/TypeScript/issues/29127#issuecomment-449566775
+
+Error is
+```shell
+ Error [ERR_REQUIRE_ESM]: Must use import to load ES Module: /test-frameworks/src/models/Driver.ts
+```

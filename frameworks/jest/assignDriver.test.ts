@@ -15,7 +15,7 @@ jest.mock(('../../src/connectors/driversConnector'), () => ({
 
 describe('Assign driver behaviours', () => {
   it('should assign a Ferrari to Schumacher', async () => {
-    const mockedCars: Car[] = [{
+    const mockedCars: Car.CarType[] = [{
       id: 9999,
       name: 'Ferrari 296 GTB',
     },
@@ -40,7 +40,7 @@ describe('Assign driver behaviours', () => {
   });
 
   it('should throw an error', async () => {
-    const mockedCars: Car[] = [
+    const mockedCars: Car.CarType[] = [
       {
         id: 2,
         name: 'Audi R8',

@@ -1,21 +1,17 @@
-// import { describe, it } from 'node:test';
-// import assert from 'node:assert/strict';
-// import * as Car from '../../src/models/Car.js';
-//
-// describe('Car', () => {
-//   it('should return Ferrari', async () => {
-//     const car = await Car.get(1);
-//     assert.equal(car?.name, 'Ferrari 296 GTB');
-//   });
-//
-//   it('should return 2 cars', async () => {
-//     const cars = await Car.list(2);
-//     assert.equal(cars.length, 2);
-//   });
-//
-//   it('should return Lambo', async () => {
-//     const car = await Car.find('Lamborghini');
-//     assert.equal(car?.name, 'Lamborghini Huracan STO');
-//   });
-// });
-// TODO!
+import assert from 'node:assert';
+import tap from 'tap';
+import Driver from '../../src/models/Driver.js';
+
+tap.mock('../../src/models/Driver', {
+  '../../src/connectors/driversConnector': {
+    getAllDrivers: () => [{
+      id: 333,
+      name: 'Schumacher',
+      contract: 'Ferrari',
+    }],
+  },
+});
+tap.test('should mock driverConnector module', async () => {
+  const driver = await Driver.get(333);
+  assert.strictEqual(driver?.id, 333);
+});
