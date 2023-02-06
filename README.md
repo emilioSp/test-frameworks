@@ -1,6 +1,6 @@
 # test-frameworks
 
-Node.js test frameworks comparison.
+Node.js test frameworks comparison. 🧪
 
 ## Fighters
 - `jest` aka "the champion" 🏆
@@ -41,7 +41,7 @@ References:
 
 ### Tap
 Tap requires an extra dependency if you want to mock esm modules 🚨
-It seems that tap doesn't work properly with TypeScript, and it requires [esmock](https://www.npmjs.com/package/esmock) to achieve mocking capabilities.
+It seems that tap doesn't work properly with `TypeScript`, and it requires [esmock](https://www.npmjs.com/package/esmock) to achieve mocking capabilities.
 https://github.com/tapjs/node-tap/issues/807#issuecomment-1215999251
 
 Error is
@@ -49,6 +49,12 @@ Error is
  Error [ERR_REQUIRE_ESM]: Must use import to load ES Module: /test-frameworks/src/models/Driver.ts
 ```
 
+`tap` doesn't have memory issue, but it is very slow, I suppose, due to `ts-node/esm` 😔
+
+That brings me to the idea that it is not yet suitable for `TypeScript` project,
+but it remains my best choice for tiny `JavaScript` projects where you don't want to deal with external dependencies. ⭐️
+
 ### Vitest
 Native support for ESM and Typescript (no additional dependency or config) ⭐️
 
+Blazing fast ⭐️
