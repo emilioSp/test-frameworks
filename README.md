@@ -3,9 +3,9 @@
 Node.js test frameworks comparison.
 
 ## Fighters
-- Jest aka "the champion"
-- Tap aka "the underdogs"
-- Vitest aka "the challenger"
+- Jest aka "the champion" 🏆
+- Tap aka "the underdogs" 🏋️
+- Vitest aka "the challenger" 🏎️
 
 ## Rules
 - TypeScript is mandatory
@@ -17,7 +17,7 @@ Node.js test frameworks comparison.
 
 ## TODO
 - [x] Add async tests
-- [ ] Explore mocking
+- [x] Explore mocking
 - [ ] Memory consumption test
 - [ ] Performance test
 
@@ -37,7 +37,10 @@ References:
 
 **However, I found a way to mock implementation of ESM modules, through `spyOn` method.**
 
+🚨 But IMO this is misleading. _Spying_ and _Mocking_ are 2 distinct concepts in the testing domain.
+
 ### Tap
+Tap requires an extra dependency if you want to mock esm modules 🚨
 It seems that tap doesn't work properly with TypeScript, and it requires [esmock](https://www.npmjs.com/package/esmock) to achieve mocking capabilities.
 https://github.com/tapjs/node-tap/issues/807#issuecomment-1215999251
 

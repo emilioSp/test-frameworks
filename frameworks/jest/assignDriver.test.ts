@@ -5,21 +5,22 @@ import * as carsConnector from '../../src/connectors/carsConnector.js';
 import { DriverType } from '../../src/models/Driver.js';
 import { CarType } from '../../src/models/Car.js';
 
-const mockModules = (drivers: DriverType[], cars: CarType[]) => {
-  jest.spyOn(driversConnector, 'getAllDrivers').mockImplementation(async () => drivers);
-  jest.spyOn(carsConnector, 'getAllCars').mockImplementation(async () => cars);
-};
+const mockDrivers = (drivers: DriverType[]) => jest.spyOn(driversConnector, 'getAllDrivers').mockImplementation(async () => drivers);
+const mockCars = (cars: CarType[]) => jest.spyOn(carsConnector, 'getAllCars').mockImplementation(async () => cars);
 
 describe('Assign driver behaviours', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+
   it('should assign a Ferrari to Schumacher', async () => {
-    mockModules([{
+    mockDrivers([{
       id: 50,
       name: 'Schumacher',
       contract: 'Ferrari',
-    }], [{
+    }]);
+
+    mockCars([{
       id: 9999,
       name: 'Ferrari 296 GTB',
     },
@@ -40,11 +41,13 @@ describe('Assign driver behaviours', () => {
   });
 
   it('should throw an error', async () => {
-    mockModules([{
+    mockDrivers([{
       id: 50,
       name: 'Schumacher',
       contract: 'Ferrari',
-    }], [
+    }]);
+
+    mockCars([
       {
         id: 2,
         name: 'Audi R8',
@@ -54,7 +57,6 @@ describe('Assign driver behaviours', () => {
         name: 'Lamborghini Huracan STO',
       }]);
 
-    const assignedDriver = assignDriver('Schumacher');
-    expect(assignedDriver).rejects.toThrow('No car available for Schumacher');
+    expect(assignDriver('Schumacher')).rejects.toThrow('No car available for Schumacher');
   });
 });
