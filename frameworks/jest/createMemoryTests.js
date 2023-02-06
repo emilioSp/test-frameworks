@@ -6,6 +6,18 @@ import fs from 'node:fs';
 //     expect(1).toStrictEqual(1);
 //   });
 // });
+//
+// describe('memory consumption', () => {
+//   it('dummy test', async () => {
+//     expect(1).toStrictEqual(1);
+//   });
+// });
+//
+// describe('memory consumption', () => {
+//   it('dummy test', async () => {
+//     expect(1).toStrictEqual(1);
+//   });
+// });
 // `;
 
 const template = fs.readFileSync('./memory-consumption/template.ts');
