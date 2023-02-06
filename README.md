@@ -18,7 +18,7 @@ Node.js test frameworks comparison. 🧪
 ## TODO
 - [x] Add async tests
 - [x] Explore mocking
-- [ ] Memory consumption test
+- [x] Memory consumption test
 - [ ] Performance test
 
 ## Notes
