@@ -49,4 +49,6 @@ Error is
  Error [ERR_REQUIRE_ESM]: Must use import to load ES Module: /test-frameworks/src/models/Driver.ts
 ```
 
+### Vitest
+Native support for ESM and Typescript (no additional dependency or config) ⭐️
 
