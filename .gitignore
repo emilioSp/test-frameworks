@@ -106,3 +106,4 @@ dist
 .idea
 
 ./frameworks/jest/memory-consumption/memory*
+./frameworks/vitest/memory-consumption/memory*

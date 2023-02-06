@@ -5,7 +5,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "vitest run --logHeapUsage"
+    "test": "vitest run --logHeapUsage --no-threads",
+    "clean-test-memory": "rm -rf ./memory-consumption/memory*",
+    "build-test-memory": "node createMemoryTests.js",
+    "test-memory": "yarn clean-test-memory && yarn build-test-memory && vitest run  --no-threads --logHeapUsage ./memory-consumption"
   },
   "peerDependencies": {
     "axios": "^1.2.5"

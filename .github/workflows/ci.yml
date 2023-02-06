@@ -26,3 +26,8 @@ jobs:
         with:
           cmd: test-memory # will run `yarn test` command
           dir: 'frameworks/jest'
+      - name: Test
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test-memory # will run `yarn test` command
+          dir: 'frameworks/vitest'
