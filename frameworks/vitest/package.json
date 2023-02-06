@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run --logHeapUsage"
   },
   "peerDependencies": {
     "axios": "^1.2.5"
