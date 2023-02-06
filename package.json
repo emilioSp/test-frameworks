@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "eslint": "eslint src/** frameworks/**"
+    "eslint": "eslint src/** frameworks/**",
+    "jest": "yarn workspace jest test",
+    "jest-memory": "yarn workspace jest test-memory",
+    "vitest-memory": "yarn workspace vitest test-memory"
   },
   "repository": {
     "type": "git",
