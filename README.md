@@ -3,9 +3,9 @@
 Node.js test frameworks comparison.
 
 ## Fighters
-- Jest aka "the champion" 🏆
-- Tap aka "the underdogs" 🏋️
-- Vitest aka "the challenger" 🏎️
+- `jest` aka "the champion" 🏆
+- `tap` aka "the underdogs" 🏋️
+- `vitest` aka "the challenger" 🏎️
 
 ## Rules
 - TypeScript is mandatory
