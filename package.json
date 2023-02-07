@@ -5,11 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
     "eslint": "eslint src/** frameworks/**",
+    "clean": "rm -rf ./frameworks/jest/tests/*.test.ts && rm -rf ./frameworks/tap/tests/*.test.ts && rm -rf ./frameworks/vitest/tests/*.test.ts",
+    "build": "yarn clean && node createTests.js",
     "jest": "yarn workspace jest test",
-    "jest-memory": "yarn workspace jest test-memory",
-    "vitest-memory": "yarn workspace vitest test-memory"
+    "tap": "yarn workspace tap test",
+    "vitest": "yarn workspace vitest test"
   },
   "repository": {
     "type": "git",

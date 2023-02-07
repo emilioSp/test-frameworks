@@ -5,9 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf tests/*test*.ts",
-    "build": "node createTests.js",
-    "test": "yarn clean && yarn build && vitest run --threads=false"
+    "test": "vitest run --threads=false --logHeapUsage"
   },
   "peerDependencies": {
     "axios": "^1.2.5"

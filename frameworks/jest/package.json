@@ -5,9 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf ./tests/*test*",
-    "build": "node createTests.js",
-    "test": "yarn clean && yarn build && jest --runInBand"
+    "test": "jest --runInBand --logHeapUsage"
   },
   "peerDependencies": {
     "axios": "^1.2.5"

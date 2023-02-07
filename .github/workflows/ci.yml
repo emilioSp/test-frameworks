@@ -21,13 +21,15 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install
-      - name: Test
+      - name: Build tests
         uses: borales/actions-yarn@v4
         with:
-          cmd: test
-          dir: 'frameworks/jest'
-      - name: Test
+          cmd: build
+      - name: Run test with jest
         uses: borales/actions-yarn@v4
         with:
-          cmd: test
-          dir: 'frameworks/vitest'
+          cmd: jest
+      - name: Run test with vitest
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: vitest

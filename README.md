@@ -8,9 +8,32 @@ Node.js test frameworks comparison. 🧪
 - `vitest` aka "the challenger" 🏎️
 
 ## Rules
-- TypeScript is mandatory
-- ESM is mandatory in order to test future-proof capabilities
+- `TypeScript` is mandatory
+- `ESM` is mandatory in order to test future-proof capabilities
+- Every test file should contain 2 tests, a happy path and an error case
+- Every test file should use mocking feature, because mocking is a core feature for a testing framework.
+
+## How
 - Test a simple (and dumb) app that assigns a driver to the right car 🏎 ...based on his contract 💵️
+- Every test mocks 2 modules `driversConnector` and `carsConnector`. Let's image that in production those data are stored in external services (DB, api or what else).
+
+## Usage
+First, you need to create tests
+
+```shell
+yarn build <number-of-tests> [default: 200]
+```
+
+Then you can run tests and see results
+```shell
+yarn jest
+```
+```shell
+yarn tap
+```
+```shell
+yarn vitest
+```
 
 ## Caveats
 - Why imports have file extensions? 👉https://nodejs.org/api/esm.html#mandatory-file-extensions
@@ -19,7 +42,7 @@ Node.js test frameworks comparison. 🧪
 - [x] Add async tests
 - [x] Explore mocking
 - [x] Memory consumption test
-- [ ] Performance test
+- [x] Performance test
 
 ## Notes
 

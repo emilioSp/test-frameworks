@@ -5,9 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf tests/*test*.ts",
-    "build": "node createTests.js",
-    "test": "yarn clean && yarn build && node --experimental-specifier-resolution=node --loader='ts-node/esm' --loader='esmock' --test tests/*"
+    "test": "node --trace_gc --experimental-specifier-resolution=node --loader='ts-node/esm' --loader='esmock' --test tests/*"
   },
   "peerDependencies": {
     "axios": "^1.2.5"
