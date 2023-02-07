@@ -51,6 +51,8 @@ From my POV, Jest has serious issues related to ESM.
 
 After wasting ~2h, I give up with `mock` and `unstable_mockModule`.
 
+**However, I found a way to mock implementation of ESM modules, through `spyOn` method.**
+
 References:
 - https://stackoverflow.com/questions/49650323/jest-mock-module-multiple-times-with-different-values this approach won't work with ESM.
 - Jest mock works only for CJS https://stackoverflow.com/questions/70999696/node-ts-jest-esm-jest-mock-doing-nothing
@@ -58,12 +60,9 @@ References:
 - https://github.com/facebook/jest/issues/10025 jest issues related to mock, which actually, doesn't mock.
 - https://github.com/facebook/jest/issues/9430 jest issues for supporting native ESM
 
-**However, I found a way to mock implementation of ESM modules, through `spyOn` method.**
-
-🚨 But IMO this is misleading. _Spying_ and _Mocking_ are 2 distinct concepts in the testing domain.
-
 ### Tap
-Tap requires an extra dependency if you want to mock esm modules 🚨
+Tap requires an extra dependency if you want to mock esm modules with `TypeScript` 🚨 (no issues with vanilla `JavaScript`)
+
 It seems that tap doesn't work properly with `TypeScript`, and it requires [esmock](https://www.npmjs.com/package/esmock) to achieve mocking capabilities.
 https://github.com/tapjs/node-tap/issues/807#issuecomment-1215999251
 
@@ -80,4 +79,4 @@ but it remains my best choice for tiny `JavaScript` projects where you don't wan
 ### Vitest
 Native support for ESM and Typescript (no additional dependency or config) ⭐️
 
-Blazing fast ⭐️
+Blazing fast (for real) ⭐️
