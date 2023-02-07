@@ -58,6 +58,3 @@ but it remains my best choice for tiny `JavaScript` projects where you don't wan
 Native support for ESM and Typescript (no additional dependency or config) ⭐️
 
 Blazing fast ⭐️
-
-
-test gh
