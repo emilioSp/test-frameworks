@@ -5,10 +5,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "node --trace_gc --experimental-specifier-resolution=node --loader='ts-node/esm' --loader='esmock' --test assignDriver.test.ts",
-    "clean-test-memory": "rm -rf ./memory-consumption/memory*",
-    "build-test-memory": "node createMemoryTests.js",
-    "test-memory": "yarn clean-test-memory && yarn build-test-memory && node --trace_gc --experimental-specifier-resolution=node --loader='ts-node/esm' --loader='esmock' --test ./memory-consumption/*"
+    "clean": "rm -rf tests/*test*.ts",
+    "build": "node createTests.js",
+    "test": "yarn clean && yarn build && node --experimental-specifier-resolution=node --loader='ts-node/esm' --loader='esmock' --test tests/*"
   },
   "peerDependencies": {
     "axios": "^1.2.5"
