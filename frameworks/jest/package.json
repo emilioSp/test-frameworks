@@ -8,7 +8,7 @@
     "test": "jest",
     "clean-test-memory": "rm -rf ./memory-consumption/memory*",
     "build-test-memory": "node createMemoryTests.js",
-    "test-memory": "yarn clean-test-memory && yarn build-test-memory && jest --runInBand --logHeapUsage ./memory-consumption"
+    "test-memory": "yarn clean-test-memory && yarn build-test-memory && jest --runInBand ./memory-consumption"
   },
   "peerDependencies": {
     "axios": "^1.2.5"

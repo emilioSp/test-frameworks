@@ -1,5 +1,5 @@
 import {
-  assert, describe, it, vi, afterEach, expect,
+  assert, describe, it, vi, afterEach, expect, Mock,
 } from 'vitest';
 import { assignDriver } from '../../../src/behaviours/assignDriver.js';
 import { getAllDrivers } from '../../../src/connectors/driversConnector.js';
@@ -12,8 +12,8 @@ vi.mock('../../../src/connectors/driversConnector.ts');
 vi.mock('../../../src/connectors/carsConnector.ts');
 
 // Modules mock implementation
-const mockDrivers = (drivers: DriverType[]) => vi.mocked(getAllDrivers).mockResolvedValue(drivers);
-const mockCars = (cars: CarType[]) => vi.mocked(getAllCars).mockResolvedValue(cars);
+const mockDrivers = (drivers: DriverType[]) => (getAllDrivers as Mock).mockResolvedValue(drivers);
+const mockCars = (cars: CarType[]) => (getAllCars as Mock).mockResolvedValue(cars);
 
 describe('Assign driver behaviour', () => {
   afterEach(() => {
