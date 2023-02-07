@@ -81,4 +81,4 @@ Main advantages:
 - Minimized memory consumption ⭐️
 - No config file needed ⭐️
 
-...it seems that we have a new sheriff in the town 🎖️
+...it seems that there is a new sheriff in town 🎖️
