@@ -82,3 +82,14 @@ Main advantages:
 - No config file needed ⭐️
 
 ...it seems that there is a new sheriff in town 🎖️
+
+
+## Results
+
+Memory consumption (max heap size recorded during execution) 
+
+|        | 1 test | 50 tests | 100 tests | 200 tests |
+|--------|-------:|---------:|----------:|----------:|
+| Jest   | 280 MB |   776 MB |      1 GB |    1.5 GB |
+| Tap    | 142 MB |   142 MB |    142 MB |    142 MB |
+| Vitest |  25 MB |    37 MB |     43 MB |     55 MB |
