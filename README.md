@@ -86,10 +86,20 @@ Main advantages:
 
 ## Results
 
-Memory consumption (max heap size recorded during execution) 
+**Memory consumption** (max heap size recorded during execution)
+
+Usage of threads not allowed (`--runInBand`, `--threads=false`)
 
 |        | 1 test | 50 tests | 100 tests | 200 tests |
 |--------|-------:|---------:|----------:|----------:|
-| Jest   | 280 MB |   776 MB |      1 GB |    1.5 GB |
+| Jest   | 183 MB |   556 MB |    838 MB |   1490 MB |
 | Tap    | 142 MB |   142 MB |    142 MB |    142 MB |
 | Vitest |  25 MB |    37 MB |     43 MB |     55 MB |
+
+Usage of threads allowed
+
+|        | 1 test | 50 tests | 100 tests | 200 tests |
+|--------|-------:|---------:|----------:|----------:|
+| Jest   | 177 MB |   220 MB |    264 MB |    321 MB |
+| Tap    |  N / A |    N / A |     N / A |     N / A |
+| Vitest |  22 MB |    27 MB |     28 MB |     28 MB |

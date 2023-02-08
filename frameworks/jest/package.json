@@ -5,7 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "jest --runInBand --logHeapUsage"
+    "test": "jest --logHeapUsage --runInBand",
+    "test-perf": "jest"
   },
   "peerDependencies": {
     "axios": "^1.2.5"

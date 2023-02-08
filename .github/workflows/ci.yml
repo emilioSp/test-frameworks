@@ -24,7 +24,43 @@ jobs:
       - name: Build tests
         uses: borales/actions-yarn@v4
         with:
-          cmd: build
+          cmd: build 1
+      - name: Run test with jest
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: jest
+      - name: Run test with vitest
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: vitest
+      - name: Build tests
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build 50
+      - name: Run test with jest
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: jest
+      - name: Run test with vitest
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: vitest
+      - name: Build tests
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build 100
+      - name: Run test with jest
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: jest
+      - name: Run test with vitest
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: vitest
+      - name: Build tests
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build 200
       - name: Run test with jest
         uses: borales/actions-yarn@v4
         with:

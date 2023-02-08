@@ -5,7 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "vitest run --threads=false --logHeapUsage"
+    "test": "vitest run --threads=false --logHeapUsage",
+    "test-perf": "vitest run --threads=false"
   },
   "peerDependencies": {
     "axios": "^1.2.5"
