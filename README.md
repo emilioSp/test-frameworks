@@ -2,6 +2,8 @@
 
 Node.js test frameworks comparison. 🧪
 
+TL;DR: Go with `vitest` and you won't be wrong
+
 ## Fighters
 - `jest` aka "the champion" 🏆
 - `tap` aka "the underdogs" 🏋️
@@ -38,6 +40,39 @@ yarn vitest
 ## Caveats
 - Why imports have file extensions? 👉https://nodejs.org/api/esm.html#mandatory-file-extensions
 
+## Resource consumption test
+
+**Memory consumption** (max heap size recorded during execution)
+
+Usage of threads not allowed (`--runInBand`, `--threads=false`)
+
+|        | 1 test | 50 tests | 100 tests | 200 tests |
+|--------|-------:|---------:|----------:|----------:|
+| Jest   | 183 MB |   556 MB |    838 MB |   1490 MB |
+| Tap    | 142 MB |   142 MB |    142 MB |    142 MB |
+| Vitest |  25 MB |    37 MB |     43 MB |     55 MB |
+
+Usage of threads allowed
+
+|        | 1 test | 50 tests | 100 tests | 200 tests |
+|--------|-------:|---------:|----------:|----------:|
+| Jest   | 177 MB |   220 MB |    264 MB |    321 MB |
+| Tap    |  N / A |    N / A |     N / A |     N / A |
+| Vitest |  22 MB |    27 MB |     28 MB |     28 MB |
+
+**Time consumption** (time taken on GitHub actions)
+
+Tap is skipped because it's slow even on my machine 😔
+
+To boost performance I have used the following config:
+- Jest with thread
+- Vitest without threads
+
+|        | 1 test | 50 tests | 100 tests | 200 tests |
+|--------|-------:|---------:|----------:|----------:|
+| Jest   |  3.6 s |   17.8 s |    26.2 s |    47.2 s |
+| Vitest |  0.7 s |    1.5 s |     2.2 s |     3.5 s |
+
 ## Conclusion
 ### Tap
 `tap` "the underdogs" it is not yet suitable for `TypeScript` project.
@@ -72,7 +107,7 @@ maybe due to this https://bugs.chromium.org/p/v8/issues/detail?id=12198 that is 
 Performance are OK, but it could be definitely better.
 
 ### Vitest
-`vitest`, "the challenger", really surprised me 😮. 
+`vitest`, "the challenger", really surprised me 😮.
 
 Main advantages:
 
@@ -82,25 +117,4 @@ Main advantages:
 - No config file needed ⭐️
 
 ...it seems that there is a new sheriff in town 🎖️
-
-
-## Results
-
-**Memory consumption** (max heap size recorded during execution)
-
-Usage of threads not allowed (`--runInBand`, `--threads=false`)
-
-|        | 1 test | 50 tests | 100 tests | 200 tests |
-|--------|-------:|---------:|----------:|----------:|
-| Jest   | 183 MB |   556 MB |    838 MB |   1490 MB |
-| Tap    | 142 MB |   142 MB |    142 MB |    142 MB |
-| Vitest |  25 MB |    37 MB |     43 MB |     55 MB |
-
-Usage of threads allowed
-
-|        | 1 test | 50 tests | 100 tests | 200 tests |
-|--------|-------:|---------:|----------:|----------:|
-| Jest   | 177 MB |   220 MB |    264 MB |    321 MB |
-| Tap    |  N / A |    N / A |     N / A |     N / A |
-| Vitest |  22 MB |    27 MB |     28 MB |     28 MB |
 
