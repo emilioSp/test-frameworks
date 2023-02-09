@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Test frameworks
 
 on: workflow_dispatch
 
@@ -18,7 +18,7 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install
-      - name: Build tests
+      - name: Build 1 test
         uses: borales/actions-yarn@v4
         with:
           cmd: build 1
@@ -30,7 +30,7 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: vitest
-      - name: Build tests
+      - name: Build 50 tests
         uses: borales/actions-yarn@v4
         with:
           cmd: build 50
@@ -42,7 +42,7 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: vitest
-      - name: Build tests
+      - name: Build 100 tests
         uses: borales/actions-yarn@v4
         with:
           cmd: build 100
@@ -54,7 +54,7 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: vitest
-      - name: Build tests
+      - name: Build 200 tests
         uses: borales/actions-yarn@v4
         with:
           cmd: build 200
