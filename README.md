@@ -6,7 +6,7 @@ TL;DR: Go with `vitest` and you won't be wrong
 
 ## Fighters
 - `jest` aka "the champion" 🏆
-- `tap` aka "the underdogs" 🏋️
+- `tap` aka "the underdog" 🏋️
 - `vitest` aka "the challenger" 🏎️
 
 ## Rules
@@ -75,7 +75,7 @@ To boost performance I have used the following config:
 
 ## Conclusion
 ### Tap
-`tap` "the underdogs" it is not yet suitable for `TypeScript` project.
+`tap` "the underdog" it is not yet suitable for `TypeScript` project.
 
 It requires external libraries to make it handle `TypeScript` and mocking capability.
 
