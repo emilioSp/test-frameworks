@@ -60,12 +60,12 @@ Usage of threads allowed
 | Tap    |  N / A |    N / A |     N / A |     N / A |
 | Vitest |  22 MB |    27 MB |     28 MB |     28 MB |
 
-**Time consumption** (time taken on GitHub actions)
+**Time consumption** (time recorded on GitHub actions)
 
 Tap is skipped because it's slow even on my machine 😔
 
 To boost performance I have used the following config:
-- Jest with thread
+- Jest with threads
 - Vitest without threads
 
 |        | 1 test | 50 tests | 100 tests | 200 tests |
