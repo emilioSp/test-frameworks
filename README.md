@@ -6,7 +6,7 @@ TL;DR: Go with `vitest` and you won't be wrong
 
 ## Fighters
 - `jest` aka "the champion" 🏆
-- `tap` aka "the underdog" 🏋️
+- `node-test-runner` aka "the underdog" 🏋️
 - `vitest` aka "the challenger" 🏎️
 
 ## Rules
@@ -31,7 +31,7 @@ Then you can run tests and see results
 yarn jest
 ```
 ```shell
-yarn tap
+yarn node-test-runner
 ```
 ```shell
 yarn vitest
@@ -46,23 +46,23 @@ yarn vitest
 
 Usage of threads not allowed (`--runInBand`, `--threads=false`)
 
-|        | 1 test | 50 tests | 100 tests | 200 tests |
-|--------|-------:|---------:|----------:|----------:|
-| Jest   | 183 MB |   556 MB |    838 MB |   1490 MB |
-| Tap    | 142 MB |   142 MB |    142 MB |    142 MB |
-| Vitest |  25 MB |    37 MB |     43 MB |     55 MB |
+|                  | 1 test | 50 tests | 100 tests | 200 tests |
+|------------------|-------:|---------:|----------:|----------:|
+| Jest             | 183 MB |   556 MB |    838 MB |   1490 MB |
+| Node test runner | 142 MB |   142 MB |    142 MB |    142 MB |
+| Vitest           |  25 MB |    37 MB |     43 MB |     55 MB |
 
 Usage of threads allowed
 
-|        | 1 test | 50 tests | 100 tests | 200 tests |
-|--------|-------:|---------:|----------:|----------:|
-| Jest   | 177 MB |   220 MB |    264 MB |    321 MB |
-| Tap    |  N / A |    N / A |     N / A |     N / A |
-| Vitest |  22 MB |    27 MB |     28 MB |     28 MB |
+|                  | 1 test | 50 tests | 100 tests | 200 tests |
+|------------------|-------:|---------:|----------:|----------:|
+| Jest             | 177 MB |   220 MB |    264 MB |    321 MB |
+| Node test runner |  N / A |    N / A |     N / A |     N / A |
+| Vitest           |  22 MB |    27 MB |     28 MB |     28 MB |
 
 **Time consumption** (time recorded on GitHub actions)
 
-Tap is skipped because it's slow even on my machine 😔
+Node test runner is skipped because it's slow even on my machine 😔
 
 To boost performance I have used the following config:
 - Jest with threads
@@ -74,8 +74,8 @@ To boost performance I have used the following config:
 | Vitest |  0.7 s |    1.5 s |     2.2 s |     3.5 s |
 
 ## Conclusion
-### Tap
-`tap` "the underdog" it is not yet suitable for `TypeScript` project.
+### Node test runner
+`node-test-runner` "the underdog" it is not yet suitable for `TypeScript` project.
 
 It requires external libraries to make it handle `TypeScript` and mocking capability.
 

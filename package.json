@@ -6,11 +6,11 @@
   "type": "module",
   "scripts": {
     "eslint": "eslint src/** frameworks/**",
-    "clean": "rm -rf ./frameworks/jest/tests/*.test.ts && rm -rf ./frameworks/tap/tests/*.test.ts && rm -rf ./frameworks/vitest/tests/*.test.ts",
+    "clean": "rm -rf ./frameworks/jest/tests/*.test.ts && rm -rf frameworks/node-test-runner/tests/*.test.ts && rm -rf ./frameworks/vitest/tests/*.test.ts",
     "build": "yarn clean && node createTests.js",
-    "jest": "yarn workspace jest test-perf",
-    "tap": "yarn workspace tap test-perf",
-    "vitest": "yarn workspace vitest test-perf"
+    "jest": "yarn workspace jest test",
+    "node-test-runner": "yarn workspace node-test-runner test",
+    "vitest": "yarn workspace vitest test"
   },
   "repository": {
     "type": "git",

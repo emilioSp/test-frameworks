@@ -40,7 +40,7 @@ describe('Assign driver behaviours', () => {
     expect(assignedDriver.driverName).toStrictEqual('Schumacher');
   });
 
-  it('should throw an error', async () => {
+  it('should throw an error because Ferrari is not signed to the competition', async () => {
     mockDrivers([{
       id: 50,
       name: 'Schumacher',

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 
 const jestBasePath = './frameworks/jest';
-const tapBasePath = './frameworks/tap';
+const tapBasePath = './frameworks/node-test-runner';
 const vitestBasePath = './frameworks/vitest';
 
 const COUNT = process.argv[2] ?? 200;

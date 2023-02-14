@@ -47,7 +47,7 @@ describe('Assign driver behaviour', () => {
     assert.strictEqual(assignedDriver.driverName, 'Schumacher');
   });
 
-  it('should throw an error', async () => {
+  it('should throw an error because Ferrari is not signed to the competition', async () => {
     mockDrivers([{
       id: 50,
       name: 'Schumacher',
