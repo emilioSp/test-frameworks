@@ -1,8 +1,8 @@
-import { getAllCars } from '../connectors/carsConnector.js';
+import { getAllCars } from '../connectors/carsConnector.ts';
 
 export type CarType = {
-  id: number,
-  name: string,
+  id: number;
+  name: string;
 };
 export const get = async (id: number): Promise<CarType | undefined> => {
   const cars = await getAllCars();

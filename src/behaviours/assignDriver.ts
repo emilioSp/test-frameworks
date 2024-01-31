@@ -1,14 +1,15 @@
-import Car from '../models/Car.js';
-import Driver from '../models/Driver.js';
+import Car from '../models/Car.ts';
+import Driver from '../models/Driver.ts';
 
 type AssignedDriver = {
   carId: number;
   carName: string;
   driverId: number;
   driverName: string;
-
-}
-export const assignDriver = async (driverName: string): Promise<AssignedDriver> => {
+};
+export const assignDriver = async (
+  driverName: string,
+): Promise<AssignedDriver> => {
   const driver = await Driver.find(driverName);
   if (!driver) throw new Error('Driver not found');
 

@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "24"
+  },
   "scripts": {
-    "eslint": "eslint src/** frameworks/**",
+    "lint": "biome check --fix src/ frameworks/",
     "clean": "rm -rf ./frameworks/jest/tests/*.test.ts && rm -rf frameworks/node-test-runner/tests/*.test.ts && rm -rf ./frameworks/vitest/tests/*.test.ts",
     "build": "yarn clean && node createTests.js",
     "jest": "yarn workspace jest test",
@@ -24,14 +27,8 @@
   "private": "true",
   "homepage": "https://github.com/emilioSp/test-frameworks#readme",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.48.2",
-    "@typescript-eslint/parser": "^5.48.2",
-    "axios": "^1.2.5",
-    "eslint": "^8.32.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.4"
+    "@biomejs/biome": "2.4.2",
+    "typescript": "5.9.3"
   },
   "workspaces": [
     "frameworks/*"

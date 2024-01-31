@@ -5,12 +5,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "vitest run --threads=false --logHeapUsage"
-  },
-  "peerDependencies": {
-    "axios": "^1.2.5"
+    "test": "vitest run --logHeapUsage"
   },
   "dependencies": {
-    "vitest": "^0.28.1"
+    "vitest": "4.0.18"
   }
 }

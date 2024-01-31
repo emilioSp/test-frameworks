@@ -1,9 +1,12 @@
-// Let's say these data are provided by an external service
-import axios from 'axios';
-import { CarType } from '../models/Car.js';
+// Let's pretend these data are in a DB
 
-export const getAllCars = async () => {
-  const response = await axios.get('http://localhost/cars-service');
-  const cars: CarType[] = response.data;
-  return cars;
-};
+export const getAllCars = async () => [
+    {
+      id: 9999,
+      name: 'Ferrari 296 GTB',
+    },
+    {
+      id: 2,
+      name: 'Audi R8',
+    }
+  ];

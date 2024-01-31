@@ -4,6 +4,8 @@ Node.js test frameworks comparison. 🧪
 
 TL;DR: Go with `vitest` and you won't be wrong
 
+<a href="https://www.buymeacoffee.com/emiliosp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ## Fighters
 - `jest` aka "the champion" 🏆
 - `node-test-runner` aka "the underdog" 🏋️

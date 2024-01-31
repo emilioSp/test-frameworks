@@ -1,8 +1,8 @@
-import { getAllDrivers } from '../connectors/driversConnector.js';
+import { getAllDrivers } from '../connectors/driversConnector.ts';
 
 export type DriverType = {
-  id: number,
-  name: string,
+  id: number;
+  name: string;
   contract: string;
 };
 

@@ -1,42 +1,47 @@
-import esmock from 'esmock';
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { DriverType } from '../../../src/models/Driver.js';
-import { CarType } from '../../../src/models/Car.js';
+import { describe, it } from 'node:test';
+import esmock from 'esmock';
+import type { CarType } from '../../../src/models/Car.ts';
+import type { DriverType } from '../../../src/models/Driver.ts';
 
-const getMockedModule = async (drivers: DriverType[], cars: CarType[]) => esmock(
-  '../../../src/behaviours/assignDriver.ts',
-  {},
-  {
-    '../../../src/connectors/driversConnector.ts': {
-      getAllDrivers: () => drivers,
+const getMockedModule = async (drivers: DriverType[], cars: CarType[]) =>
+  esmock(
+    '../../../src/behaviours/assignDriver.ts',
+    {},
+    {
+      '../../../src/connectors/driversConnector.ts': {
+        getAllDrivers: () => drivers,
+      },
+      '../../../src/connectors/carsConnector.ts': {
+        getAllCars: () => cars,
+      },
     },
-    '../../../src/connectors/carsConnector.ts': {
-      getAllCars: () => cars,
-    },
-  },
-);
+  );
 
 describe('Assign driver behaviour', () => {
   it('should assign a Ferrari to Schumacher', async () => {
     const fn = await getMockedModule(
-      [{
-        id: 50,
-        name: 'Schumacher',
-        contract: 'Ferrari',
-      }],
-      [{
-        id: 9999,
-        name: 'Ferrari 296 GTB',
-      },
-      {
-        id: 2,
-        name: 'Audi R8',
-      },
-      {
-        id: 3,
-        name: 'Lamborghini Huracan STO',
-      }],
+      [
+        {
+          id: 50,
+          name: 'Schumacher',
+          contract: 'Ferrari',
+        },
+      ],
+      [
+        {
+          id: 9999,
+          name: 'Ferrari 296 GTB',
+        },
+        {
+          id: 2,
+          name: 'Audi R8',
+        },
+        {
+          id: 3,
+          name: 'Lamborghini Huracan STO',
+        },
+      ],
     );
 
     const assignedDriver = await fn.assignDriver('Schumacher');
@@ -48,11 +53,13 @@ describe('Assign driver behaviour', () => {
 
   it('should throw an error because Ferrari is not signed to the competition', async () => {
     const fn = await getMockedModule(
-      [{
-        id: 50,
-        name: 'Schumacher',
-        contract: 'Ferrari',
-      }],
+      [
+        {
+          id: 50,
+          name: 'Schumacher',
+          contract: 'Ferrari',
+        },
+      ],
       [
         {
           id: 2,
@@ -61,15 +68,13 @@ describe('Assign driver behaviour', () => {
         {
           id: 3,
           name: 'Lamborghini Huracan STO',
-        }],
+        },
+      ],
     );
 
-    await assert.rejects(
-      fn.assignDriver('Schumacher'),
-      (err: Error) => {
-        assert.strictEqual(err.message, 'No car available for Schumacher');
-        return true;
-      },
-    );
+    await assert.rejects(fn.assignDriver('Schumacher'), (err: Error) => {
+      assert.strictEqual(err.message, 'No car available for Schumacher');
+      return true;
+    });
   });
 });

@@ -108,3 +108,5 @@ dist
 ./frameworks/jest/tests/*test*.ts
 ./frameworks/tap/tests/*test*.ts
 ./frameworks/vitest/tests/*test*.ts
+
+.github/copilot-instructions.md
