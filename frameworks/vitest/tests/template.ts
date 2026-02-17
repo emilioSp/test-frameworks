@@ -1,19 +1,20 @@
-import {
-  assert, describe, it, vi, afterEach, expect, Mock,
-} from 'vitest';
-import { assignDriver } from '../../../src/behaviours/assignDriver.js';
-import { getAllDrivers } from '../../../src/connectors/driversConnector.js';
-import { getAllCars } from '../../../src/connectors/carsConnector.js';
-import { DriverType } from '../../../src/models/Driver.js';
-import { CarType } from '../../../src/models/Car.js';
+import type { Mock } from 'vitest';
+import { afterEach, assert, describe, expect, it, vi } from 'vitest';
+import { assignDriver } from '../../../src/behaviours/assignDriver.ts';
+import { getAllCars } from '../../../src/connectors/carsConnector.ts';
+import { getAllDrivers } from '../../../src/connectors/driversConnector.ts';
+import type { CarType } from '../../../src/models/Car.ts';
+import type { DriverType } from '../../../src/models/Driver.ts';
 
 // Modules to mock
 vi.mock('../../../src/connectors/driversConnector.ts');
 vi.mock('../../../src/connectors/carsConnector.ts');
 
 // Modules mock implementation
-const mockDrivers = (drivers: DriverType[]) => (getAllDrivers as Mock).mockResolvedValue(drivers);
-const mockCars = (cars: CarType[]) => (getAllCars as Mock).mockResolvedValue(cars);
+const mockDrivers = (drivers: DriverType[]) =>
+  (getAllDrivers as Mock).mockResolvedValue(drivers);
+const mockCars = (cars: CarType[]) =>
+  (getAllCars as Mock).mockResolvedValue(cars);
 
 describe('Assign driver behaviour', () => {
   afterEach(() => {
@@ -21,24 +22,28 @@ describe('Assign driver behaviour', () => {
   });
 
   it('should assign a Ferrari to Schumacher', async () => {
-    mockDrivers([{
-      id: 50,
-      name: 'Schumacher',
-      contract: 'Ferrari',
-    }]);
+    mockDrivers([
+      {
+        id: 50,
+        name: 'Schumacher',
+        contract: 'Ferrari',
+      },
+    ]);
 
-    mockCars([{
-      id: 9999,
-      name: 'Ferrari 296 GTB',
-    },
-    {
-      id: 2,
-      name: 'Audi R8',
-    },
-    {
-      id: 3,
-      name: 'Lamborghini Huracan STO',
-    }]);
+    mockCars([
+      {
+        id: 9999,
+        name: 'Ferrari 296 GTB',
+      },
+      {
+        id: 2,
+        name: 'Audi R8',
+      },
+      {
+        id: 3,
+        name: 'Lamborghini Huracan STO',
+      },
+    ]);
 
     const assignedDriver = await assignDriver('Schumacher');
     assert.strictEqual(assignedDriver.carId, 9999);
@@ -48,21 +53,27 @@ describe('Assign driver behaviour', () => {
   });
 
   it('should throw an error because Ferrari is not signed to the competition', async () => {
-    mockDrivers([{
-      id: 50,
-      name: 'Schumacher',
-      contract: 'Ferrari',
-    }]);
+    mockDrivers([
+      {
+        id: 50,
+        name: 'Schumacher',
+        contract: 'Ferrari',
+      },
+    ]);
 
-    mockCars([{
-      id: 2,
-      name: 'Audi R8',
-    },
-    {
-      id: 3,
-      name: 'Lamborghini Huracan STO',
-    }]);
+    mockCars([
+      {
+        id: 2,
+        name: 'Audi R8',
+      },
+      {
+        id: 3,
+        name: 'Lamborghini Huracan STO',
+      },
+    ]);
 
-    await expect(assignDriver('Schumacher')).rejects.toThrow('No car available for Schumacher');
+    await expect(assignDriver('Schumacher')).rejects.toThrow(
+      'No car available for Schumacher',
+    );
   });
 });

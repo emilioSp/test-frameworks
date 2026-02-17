@@ -5,14 +5,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "jest --logHeapUsage --runInBand"
-  },
-  "peerDependencies": {
-    "axios": "^1.2.5"
+    "test": "jest --logHeapUsage"
   },
   "dependencies": {
-    "@types/jest": "^29.2.6",
-    "jest": "^29.3.1",
-    "ts-jest": "^29.0.5"
+    "@types/jest": "30.0.0",
+    "jest": "30.2.0",
+    "ts-jest": "29.4.6"
   }
 }

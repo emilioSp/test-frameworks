@@ -5,12 +5,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "node --trace-gc --experimental-specifier-resolution=node --loader='ts-node/esm' --loader='esmock' --test tests/*.test.ts"
-  },
-  "peerDependencies": {
-    "axios": "^1.2.5"
+    "test": "node --trace-gc --loader='esmock' --test tests/*.test.ts"
   },
   "dependencies": {
-    "esmock": "^2.1.0"
+    "esmock": "2.7.3"
   }
 }

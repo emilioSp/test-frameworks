@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "verbatimModuleSyntax": false,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "jest.config.ts",
+    "tests/**/*"
+  ]
+}
+
